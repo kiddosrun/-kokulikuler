@@ -1,0 +1,556 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #fcf8f3; /* Krem muda */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* --- HEADER & NAVIGASI --- */
+header {
+    background-color: #4A2B3A; /* Warna ungu tua/wine */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    float: left;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    float: right;
+    display: flex;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #FFD700; /* Emas */
+    border-bottom: 2px solid #FFD700;
+}
+
+.nav-toggle {
+    display: none; /* Sembunyikan di desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.container::after { content: ""; display: table; clear: both; }
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background: url('images/hero-wayang.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h2 { font-size: 3.5rem; margin-bottom: 10px; }
+.hero-content p { font-size: 1.3rem; margin-bottom: 40px; }
+
+.btn {
+    background-color: #DAA520; /* Emas gelap */
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #B8860B;
+    transform: translateY(-2px);
+}
+
+/* --- CONTENT SECTIONS --- */
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #4A2B3A;
+    font-size: 2rem;
+    position: relative;
+}
+
+.section-icon {
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-right: 10px;
+    color: #DAA520;
+}
+
+/* Style Kartu Artikel */
+.article-card {
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    margin-bottom: 30px;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card img {
+    width: 35%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.article-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --- TIMELINE SECTION --- */
+.timeline-section {
+    background-color: #f7f3ed;
+}
+
+.timeline-container {
+    position: relative;
+    border-left: 4px solid #4A2B3A;
+    padding-left: 20px;
+    margin: 0 50px;
+}
+
+.timeline-item {
+    padding: 20px 0 20px 30px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.timeline-item h3 {
+    color: #DAA520;
+    margin-bottom: 5px;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #DAA520;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px; 
+    top: 25px;
+    border: 4px solid #fcf8f3;
+}
+
+/* --- CARD GRID (Pahlawan & Info Card) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.profile-card h3 {
+    color: #4A2B3A;
+}
+
+.btn-detail {
+    background-color: #A0522D;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-detail:hover {
+    background-color: #8B4513;
+}
+
+/* Style Tambahan untuk Bagian Warisan Takbenda */
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-style: italic;
+    color: #555;
+}
+
+.info-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 5px solid #DAA520; /* Garis emas di atas */
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #4A2B3A;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+    color: #4A2B3A;
+}
+
+
+/* --- GALERI INTERAKTIF --- */
+.gallery-tabs {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    background-color: #4A2B3A;
+    color: white;
+}
+
+.gallery-content {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-top: none;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.gallery-content.active {
+    display: grid;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s;
+}
+
+.gallery-item img:hover {
+    opacity: 0.8;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+/* --- MODAL --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: fadeIn 0.3s;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #4A2B3A;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- ANIMASI CSS --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+
+/* --- RESPONSIVITAS MOBILE --- */
+@media (max-width: 768px) {
+    .logo, header nav {
+        float: none;
+        text-align: center;
+    }
+
+    #main-nav ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    #main-nav ul.show {
+        display: flex; 
+    }
+
+    .nav-toggle {
+        display: block; 
+        float: right;
+        margin-top: -30px;
+    }
+
+    .hero-content h2 { font-size: 2.5rem; }
+    .hero-content p { font-size: 1rem; }
+
+    .article-card {
+        flex-direction: column;
+    }
+    .article-card img {
+        width: 100%;
+    }
+    
+    .card-grid, .gallery-content {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-container {
+        margin: 0;
+    }
+}
+
+.grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;      /* gambar dan card sejajar di tengah */
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    width: 260px;                 /* biar rapi dan sama semua */
+    text-align: center;           /* teks di tengah */
+    display: flex;
+    flex-direction: column;
+    align-items: center;          /* gambar dan elemen lain ke tengah */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.profile-img img {
+    width: 160px;                /* ukuran seragam */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;          /* center */
+    margin-right: auto;         /* center */
+}
+
+.profile-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.profile-card p {
+    font-size: 0.93rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.btn-detail {
+    background: #2d6cdf;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .25s ease;
+    margin-top: auto;
+}
+
+.btn-detail:hover {
+    background: #1f54b8;
+}
+
+#pahlawan {
+    text-align: center;              /* judul ke tengah */
+    display: flex;
+    flex-direction: column;
+    align-items: center;             /* center semua konten */
+    width: 100%;
+}
+
+.grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;         /* card ke tengah */
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;                /* biar gak melebar terlalu jauh */
+    margin-top: 25px;
+}
+
+.gallery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: 300px;
+    height: 80%;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item h4 {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.gallery-content {
+    display: none;
+}
+
+.gallery-content.active {
+    display: grid; /* atau block */
+}
